@@ -11,16 +11,24 @@ get '/' do
 end
 
 def guess_check(guess)
-  if guess == 0
-    'Enter a guess'
-  elsif SECRET_NUMBER == guess
+  diff = SECRET_NUMBER - guess
+  infinity = 1.0 / 0.0
+
+  case diff
+  when 0
     @@color = 'green'
     'Correct!'
-  elsif SECRET_NUMBER > guess
-    @@color = 'red'
+  when 1..25
+    @@color = 'orange'
     'The guess is too low!'
-  elsif SECRET_NUMBER < guess
+  when 26..infinity
     @@color = 'red'
+    'The guess is way too low!!!'
+  when -infinity..-26
+    @@color = 'red'
+    'The guess is way too high!'
+  when -25..-1
+    @@color = 'orange'
     'The guess is too high!'
   end
 end
