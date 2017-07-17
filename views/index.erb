@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <p>The secret number is <%= number %> </p>
-  <p><%= message %></p>
-  <form action="">
-    <input type="text" name='guess' placeholder='Type your guess'/>
-    <input type="submit" value='Guess!' />
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Number guesser</title>
+    <style>
+      body {
+        font-size: 200%;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+
+      }
+      .hidden {
+        display: none;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p class=<%= display %>>The secret number is <%= number %> </p>
+      <p class=<%= color %>><%= message %></p>
+      <form action="">
+        <input type="text" name='guess' placeholder='Type your guess'/>
+        <input type="submit" value='Guess!' />
+      </form>
+  </body>
 </html>
